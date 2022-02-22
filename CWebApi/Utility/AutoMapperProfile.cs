@@ -11,7 +11,7 @@ namespace CWebApi.Utility
     {
         public AutoMapperProfile()
         {
-            CreateMap<Country, ReturnDTO>().ReverseMap();
+            CreateMap<Country, ReturnDTO>();
         }
     }
 }
