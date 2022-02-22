@@ -1,4 +1,5 @@
-﻿using CWebApi.Model;
+﻿using AutoMapper;
+using CWebApi.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,39 +7,28 @@ using System.Threading.Tasks;
 
 namespace CWebApi.Service
 {
-    public class InMemoryService
+    public class InMemoryService: IInMemoryService
     {
-        public void AddCountry (Country country)
+        private readonly IMapper _mapper;
+        public InMemoryService(IMapper mapper)
         {
-            InMemoryDb.Countries.Add(country);
+            _mapper = mapper;
         }
-
-        public List<Country> GetAllCountries()
-        {
-            return InMemoryDb.Countries;
-        }
-
         public ReturnDTO GetNumberDetails(string number)
         {
-            ReturnDTO returnDTO = new ReturnDTO();
-            //var result = GetAllCountries();
-
+            ReturnDTO result = new ReturnDTO();
+            
             //check for the first 3 characters
             string check = number.Substring(0,3);
-
             var confirm = InMemoryDb.Countries.Where(c => c.CountryCode == check);
             if (confirm.Count() > 0)
-            {
                 foreach(var item in confirm)
                 {
-                    returnDTO.CountryCode = item.CountryCode;
-                    returnDTO.Name = item.Name;
-                    returnDTO.CountryIso = item.CountryIso;
-                   
+                    result = _mapper.Map<ReturnDTO>(item);
+                    result.Number = number;
                 }
-            }
-            return returnDTO;
-           
+            return result;
+
         }
     }
 }

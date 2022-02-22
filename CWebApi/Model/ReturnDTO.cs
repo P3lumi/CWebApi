@@ -11,6 +11,6 @@ namespace CWebApi.Model
         public string CountryCode { get; set; }
         public string Name { get; set; }
         public string CountryIso { get; set; }
-        public static List<CountryDetails> countryDetails { get; set; }
+        public List<CountryDetails> countryDetails { get; set; }
     }
 }

@@ -26,3 +26,4 @@ C:\Users\hp\Desktop\CWebApi\CWebApi\obj\Debug\net5.0\CWebApi.dll
 C:\Users\hp\Desktop\CWebApi\CWebApi\obj\Debug\net5.0\ref\CWebApi.dll
 C:\Users\hp\Desktop\CWebApi\CWebApi\obj\Debug\net5.0\CWebApi.pdb
 C:\Users\hp\Desktop\CWebApi\CWebApi\obj\Debug\net5.0\CWebApi.genruntimeconfig.cache
+C:\Users\hp\Desktop\CWebApi\CWebApi\bin\Debug\net5.0\AutoMapper.dll
